@@ -66,7 +66,7 @@ public final class SettingsFragment extends PreferenceFragment implements OnPref
     private PowerManager powerManager;
     private BluetoothManager bluetoothManager;
 
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
 

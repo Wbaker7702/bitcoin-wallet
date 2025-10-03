@@ -245,7 +245,8 @@ public class WalletApplication extends Application {
                     log.info("wallet saved to: '{}', took {}", walletFile, watch);
                 } catch (final IOException x) {
                     log.warn("problem with forced autosaving of wallet", x);
-                    CrashReporter.saveBackgroundTrace(x, packageInfo);
+                    // Ensure we pass a non-null PackageInfo instance
+                    CrashReporter.saveBackgroundTrace(x, packageInfo());
                 }
             }
         }

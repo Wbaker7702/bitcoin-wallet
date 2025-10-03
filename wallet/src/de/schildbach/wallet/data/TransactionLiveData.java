@@ -31,7 +31,7 @@ import org.bitcoinj.core.TransactionConfidence;
  */
 public class TransactionLiveData extends LiveData<Transaction> implements TransactionConfidence.Listener {
     private final Application application;
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private boolean listening = false;
 
     public TransactionLiveData(final WalletApplication application) {

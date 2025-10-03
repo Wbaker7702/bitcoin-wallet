@@ -49,7 +49,9 @@ public class Qr {
             final Hashtable<EncodeHintType, Object> hints = new Hashtable<>();
             hints.put(EncodeHintType.MARGIN, 0);
             hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
-            final BitMatrix result = QR_CODE_WRITER.encode(content, BarcodeFormat.QR_CODE, 0, 0, hints);
+            // Avoid zero-sized QR bitmaps on some ZXing versions by enforcing a minimal dimension
+            final int size = Math.max(1, content != null ? Math.min(512, Math.max(64, content.length() * 8)) : 128);
+            final BitMatrix result = QR_CODE_WRITER.encode(content, BarcodeFormat.QR_CODE, size, size, hints);
 
             final int width = result.getWidth();
             final int height = result.getHeight();

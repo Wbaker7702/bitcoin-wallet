@@ -137,7 +137,7 @@ public final class SendCoinsFragment extends Fragment {
     @Nullable
     private BluetoothAdapter bluetoothAdapter;
 
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
 

@@ -82,7 +82,7 @@ public class MaintenanceDialogFragment extends DialogFragment {
     private View badPasswordView;
     private Button positiveButton, negativeButton;
 
-    private Handler handler = new Handler();
+    private Handler handler = new Handler(android.os.Looper.getMainLooper());
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
 

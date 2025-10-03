@@ -155,7 +155,7 @@ public final class EditAddressBookEntryFragment extends DialogFragment {
         if (activity instanceof AddressBookActivity) {
             final AddressBookViewModel activityViewModel =
                     new ViewModelProvider(activity).get(AddressBookViewModel.class);
-            new Handler().postDelayed(() -> activityViewModel.selectedAddress.setValue(address), 250);
+            new Handler(android.os.Looper.getMainLooper()).postDelayed(() -> activityViewModel.selectedAddress.setValue(address), 250);
         }
     }
 }

@@ -85,7 +85,7 @@ public final class ExchangeRatesFragment extends Fragment implements OnSharedPre
                     final String initialExchangeRate = viewModel.getInitialExchangeRate();
                     if (initialExchangeRate != null)
                         // The delay is needed because of the list needs time to populate.
-                        new Handler().postDelayed(() -> viewModel.selectedExchangeRate.setValue(initialExchangeRate),
+                        new Handler(android.os.Looper.getMainLooper()).postDelayed(() -> viewModel.selectedExchangeRate.setValue(initialExchangeRate),
                                 250);
 
                     if (activity instanceof ExchangeRatesActivity) {
