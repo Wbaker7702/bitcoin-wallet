@@ -29,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -39,7 +40,7 @@ import java.util.Map;
  */
 public final class CoinGecko {
     private static final HttpUrl URL = HttpUrl.parse("https://api.coingecko.com/api/v3/exchange_rates");
-    private static final MediaType MEDIA_TYPE = MediaType.get("application/json");
+    private static final MediaType MEDIA_TYPE = MediaType.parse("application/json");
     private static final String SOURCE = "CoinGecko.com";
 
     private static final Logger log = LoggerFactory.getLogger(CoinGecko.class);
@@ -67,7 +68,8 @@ public final class CoinGecko {
             final ExchangeRateJson exchangeRate = entry.getValue();
             if (exchangeRate.type == Type.FIAT) {
                 try {
-                    final Fiat rate = Fiat.parseFiatInexact(symbol, exchangeRate.value);
+                    final String valueAsPlainString = BigDecimal.valueOf(exchangeRate.value).toPlainString();
+                    final Fiat rate = Fiat.parseFiatInexact(symbol, valueAsPlainString);
                     if (rate.signum() > 0)
                         result.add(new ExchangeRateEntry(SOURCE, new ExchangeRate(rate)));
                 } catch (final ArithmeticException x) {
@@ -94,7 +96,7 @@ public final class CoinGecko {
     private static class ExchangeRateJson {
         public String name;
         public String unit;
-        public String value;
+        public double value;
         public Type type;
     }
 }
