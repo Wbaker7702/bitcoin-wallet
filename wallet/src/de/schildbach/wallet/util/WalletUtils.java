@@ -69,9 +69,15 @@ public class WalletUtils {
     public static long longHash(final Sha256Hash hash) {
         final byte[] bytes = hash.getBytes();
 
-        return (bytes[31] & 0xFFl) | ((bytes[30] & 0xFFl) << 8) | ((bytes[29] & 0xFFl) << 16)
-                | ((bytes[28] & 0xFFl) << 24) | ((bytes[27] & 0xFFl) << 32) | ((bytes[26] & 0xFFl) << 40)
-                | ((bytes[25] & 0xFFl) << 48) | ((bytes[23] & 0xFFl) << 56);
+        // Compose a little-endian 64-bit value from the last 8 bytes
+        return (bytes[31] & 0xFFL)
+                | ((bytes[30] & 0xFFL) << 8)
+                | ((bytes[29] & 0xFFL) << 16)
+                | ((bytes[28] & 0xFFL) << 24)
+                | ((bytes[27] & 0xFFL) << 32)
+                | ((bytes[26] & 0xFFL) << 40)
+                | ((bytes[25] & 0xFFL) << 48)
+                | ((bytes[24] & 0xFFL) << 56);
     }
 
     private static class MonospaceSpan extends TypefaceSpan {
