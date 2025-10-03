@@ -1,7 +1,15 @@
 buildscript {
     repositories {
-        mavenCentral()
+        // Prefer Google first for Android Gradle Plugin and AndroidX
         google()
+        // Force use of Maven POMs to avoid Gradle module metadata variant issues
+        mavenCentral() {
+            metadataSources {
+                mavenPom()
+                artifact()
+                ignoreGradleMetadataRedirection()
+            }
+        }
     }
 
     dependencies {
@@ -16,7 +24,13 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenCentral()
         google()
+        mavenCentral() {
+            metadataSources {
+                mavenPom()
+                artifact()
+                ignoreGradleMetadataRedirection()
+            }
+        }
     }
 }
