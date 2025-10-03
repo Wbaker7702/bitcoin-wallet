@@ -131,10 +131,10 @@ public class BlockchainService extends LifecycleService {
     @Nullable
     private PeerGroup peerGroup;
 
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
-    private final Handler delayHandler = new Handler();
+    private final Handler delayHandler = new Handler(android.os.Looper.getMainLooper());
     private WakeLock wakeLock;
 
     private final NotificationCompat.Builder connectivityNotification = new NotificationCompat.Builder(BlockchainService.this,

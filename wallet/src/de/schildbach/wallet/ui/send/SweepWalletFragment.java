@@ -104,7 +104,7 @@ public class SweepWalletFragment extends Fragment {
     private Configuration config;
     private FragmentManager fragmentManager;
 
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
 

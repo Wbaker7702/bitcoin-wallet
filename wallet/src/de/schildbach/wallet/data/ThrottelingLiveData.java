@@ -26,7 +26,7 @@ import androidx.lifecycle.LiveData;
  */
 public abstract class ThrottelingLiveData<T> extends LiveData<T> {
     private final long throttleMs;
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private long lastMessageMs;
     private static final long DEFAULT_THROTTLE_MS = 500;
 

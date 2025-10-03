@@ -64,7 +64,7 @@ public class PeerListViewModel extends AndroidViewModel {
     }
 
     public static class HostnamesLiveData extends LiveData<Map<InetAddress, String>> {
-        private final Handler handler = new Handler();
+        private final Handler handler = new Handler(android.os.Looper.getMainLooper());
 
         public HostnamesLiveData(final WalletApplication application) {
             setValue(new HashMap<>());

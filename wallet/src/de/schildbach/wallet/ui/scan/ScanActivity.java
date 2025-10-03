@@ -247,7 +247,7 @@ public final class ScanActivity extends AbstractWalletActivity implements Surfac
     }
 
     private void postFinish() {
-        new Handler().postDelayed(() -> finish(), 50);
+        new Handler(android.os.Looper.getMainLooper()).postDelayed(() -> finish(), 50);
     }
 
     private final Runnable openRunnable = new Runnable() {

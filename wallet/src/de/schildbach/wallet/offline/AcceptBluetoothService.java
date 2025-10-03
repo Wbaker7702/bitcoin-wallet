@@ -62,7 +62,7 @@ public final class AcceptBluetoothService extends LifecycleService {
 
     private long serviceCreatedAt;
 
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
 
     private static final long TIMEOUT_MS = 5 * DateUtils.MINUTE_IN_MILLIS;
 

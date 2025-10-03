@@ -29,7 +29,7 @@ import org.bitcoinj.wallet.Wallet;
  */
 public abstract class AbstractWalletLiveData<T> extends ThrottelingLiveData<T> implements Observer<Event<Void>> {
     private final WalletApplication application;
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private Wallet wallet;
 
     public AbstractWalletLiveData(final WalletApplication application) {

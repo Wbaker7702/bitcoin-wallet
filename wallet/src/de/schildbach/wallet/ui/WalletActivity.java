@@ -81,7 +81,7 @@ public final class WalletActivity extends AbstractWalletActivity {
     private WalletApplication application;
     private Configuration config;
 
-    private Handler handler = new Handler();
+    private Handler handler = new Handler(android.os.Looper.getMainLooper());
 
     private AnimatorSet enterAnimation;
     private View contentView;

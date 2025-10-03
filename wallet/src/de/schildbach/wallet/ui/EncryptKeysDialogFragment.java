@@ -79,7 +79,7 @@ public class EncryptKeysDialogFragment extends DialogFragment {
     private CheckBox showView;
     private Button positiveButton, negativeButton;
 
-    private final Handler handler = new Handler();
+    private final Handler handler = new Handler(android.os.Looper.getMainLooper());
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
 
