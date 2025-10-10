@@ -1,0 +1,22 @@
+{
+  "rates": {
+    "usd": {
+      "name": "US Dollar",
+      "unit": "$",
+      "value": "50000",
+      "type": "fiat"
+    },
+    "eur": {
+      "name": "Euro",
+      "unit": "€",
+      "value": "0",
+      "type": "fiat"
+    },
+    "gbp": {
+      "name": "British Pound",
+      "unit": "£",
+      "value": "-100",
+      "type": "fiat"
+    }
+  }
+}
