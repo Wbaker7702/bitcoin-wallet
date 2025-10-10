@@ -1,0 +1,28 @@
+{
+  "rates": {
+    "usd": {
+      "name": "US Dollar",
+      "unit": "$",
+      "value": "9301.146",
+      "type": "fiat"
+    },
+    "jpy": {
+      "name": "Japanese Yen",
+      "unit": "¥",
+      "value": "1007924.948",
+      "type": "fiat"
+    },
+    "chf": {
+      "name": "Swiss Franc",
+      "unit": "Fr.",
+      "value": "8962.668",
+      "type": "fiat"
+    },
+    "inr": {
+      "name": "Indian Rupee",
+      "unit": "₹",
+      "value": "665496.971",
+      "type": "fiat"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "rates": {
+    "usd": {
+      "name": "US Dollar",
+      "unit": "$",
+      "value": "5.0e4",
+      "type": "fiat"
+    },
+    "eur": {
+      "name": "Euro",
+      "unit": "€",
+      "value": "4.5E4",
+      "type": "fiat"
+    },
+    "jpy": {
+      "name": "Japanese Yen",
+      "unit": "¥",
+      "value": "1.5e6",
+      "type": "fiat"
+    }
+  }
+}

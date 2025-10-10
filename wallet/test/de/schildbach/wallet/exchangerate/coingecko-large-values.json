@@ -1,0 +1,16 @@
+{
+  "rates": {
+    "vnd": {
+      "name": "Vietnamese Dong",
+      "unit": "₫",
+      "value": "215053100.494",
+      "type": "fiat"
+    },
+    "vef": {
+      "name": "Venezuelan Bolivar",
+      "unit": "Bs.F",
+      "value": "2311219981.163",
+      "type": "fiat"
+    }
+  }
+}
